@@ -1,3 +1,4 @@
+# -*- coding: cp1252 -*-
 import face_recognition
 import os
 
@@ -43,17 +44,10 @@ for k in range(len(lista_nepoznatih_slika)):
     unknown_encoding = face_recognition.face_encodings(unknown_image)
     rez = []
     for i in unknown_encoding:
-        rez.append(face_recognition.compare_faces(known_faces, i)) #lista nizova koji sadrže informacije o licima(da li je buš ili obama) to lice
+        rez.append(face_recognition.compare_faces(known_faces, i)) #lista nizova koji sadrze informacije o licima(da li je bush� ili obama)
 
     for lice in rez:
         for j in range(len(known_faces)):
             if lice[j] == 1:
                 print("Na slici "+ str(k) + " je " + known_faces_names[j])
                 break
-
-
-
-
-
-
-
